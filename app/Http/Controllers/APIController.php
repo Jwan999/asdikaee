@@ -6,6 +6,8 @@ use App\Models\Category;
 use App\Models\Order;
 use App\Models\OrderItem;
 use App\Models\Product;
+use Hdrm147\ZainCash;
+use Hdrm147\ZainCash2;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Response;
 
@@ -80,16 +82,33 @@ class APIController extends Controller
 //        $order->customer_id = auth()->id();
         $order->total = $request->total;
         $order->save();
+        $total = 0;
         foreach ($request->items as $item) {
+            $productId = $item["product"]["id"];
+            $product = Product::find($productId);
             $orderItem = new OrderItem();
             $orderItem->order_id = $order->id;
-            $orderItem->product_id = $item["product"]["id"];
+            $orderItem->product_id = $productId;
             $orderItem->quantity = $item["quantity"];
+            $total += $product->price * $item["quantity"];
             $orderItem->save();
         }
-        return Response::json([
-            "order" => $order
-        ]);
+        $zain = null;
+        if ($request->payment_type == "Zain Cash") {
+            $data = [
+                "msisdn" => config("zaincash.msisdn"),
+                "secret" => config("zaincash.secret"),
+                "merchant_id" => config("zaincash.merchant_id"),
+                "production_cred" => config("zaincash.is_production"),
+                "language" => "ar",
+                "redirection_url" =>  config("app.url") . "/zain-cash/$order->id/completed"
+            ];
 
+            $zainCash = new ZainCash($data);
+            $zain = $zainCash->init($total, "purchase", $order->id);
+        }
+        return Response::json([
+            "order" => $order,
+            "zain" => $zain]);
     }
 }

@@ -3,14 +3,14 @@ import VueRouter from 'vue-router';
 import routes from './routes';
 import Vuex from 'vuex';
 
-Vue.use(Vuex)
 import cart from "./cart";
 import Navbar from "./components/Navbar";
-const store = new Vuex.Store(cart);
 
-const router = new VueRouter({routes, mode: "history"});
+
+const router = new VueRouter({routes, mode: "history",});
 Vue.use(VueRouter);
-
+Vue.use(Vuex)
+const store = new Vuex.Store(cart);
 
 new Vue({
     components: {

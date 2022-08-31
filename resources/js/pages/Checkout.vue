@@ -185,12 +185,12 @@ export default {
     },
     data() {
         return {
-            fullName: '',
-            phoneNumberOne: '',
-            phoneNumberTwo: '',
-            address: '',
-            closestMark: '',
-            emailAddress: '',
+            fullName: 'Haidar Mahmoud',
+            phoneNumberOne: '07810424140',
+            phoneNumberTwo: '07810424140',
+            address: 'شارع السعدون',
+            closestMark: 'شارع الزعيم',
+            emailAddress: 'me@hdrm.dev',
             paymentType: '',
             orderStatus: null,
             validationErrors: [],
@@ -217,6 +217,14 @@ export default {
                 .then(response => {
                     this.orderStatus = true
                     this.$store.dispatch("clearCart");
+                    console.log(response.data.order);
+                    if (response.data.order.payment_type == "Zain Cash") {
+                        this.$router.push({name: "zain-cash",params: {
+                            zain: response.data.zain,
+                            order: response.data.order,
+                            orderId: response.data.order.id,
+                            }})
+                    }
                 })
                 .catch((error) => {
                     this.validationErrors = error.response.data.errors
@@ -226,6 +234,8 @@ export default {
             if (this.paymentType === 'Cash') {
                 this.sendUserData();
             } else if (this.paymentType === 'Zain Cash') {
+                // this.sendUserData();
+
             } else {
                 this.sendUserData();
             }

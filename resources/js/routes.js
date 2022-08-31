@@ -5,6 +5,7 @@ import Register from "./pages/Register";
 import OrdersStatus from "./pages/ordersStatus";
 
 import Login from "./pages/Login";
+import ZainCash from "./pages/ZainCash";
 
 export default [
     {
@@ -15,6 +16,23 @@ export default [
     //     path: "/products",
     //     component: Products
     // },
+    {
+        path: "/zain-cash",
+        component: ZainCash,
+        name: "zain-cash",
+        props: route => ({
+            zain: route.params.zain,
+            order: route.params.order,
+            orderId: route.params.orderId,
+        }),
+    },
+    {
+        path: "/zain-cash/:order/completed",
+        component: ZainCash,
+        name: "zain-cash-completed",
+        props: route => ({
+        }),
+    },
     {
         path: "/checkout",
         component: Checkout

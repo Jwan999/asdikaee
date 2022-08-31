@@ -1,0 +1,19 @@
+{
+    "name": "hdrm147/zain-cash",
+    "require": {
+        "firebase/php-jwt": "^5.0",
+        "guzzlehttp/guzzle": "~7.0.1"
+
+    },
+    "authors": [
+        {
+            "name": "Haidar Mahmoud",
+            "email": "me@hdrm.dev"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Hdrm147\\": "src/"
+        }
+    }
+}

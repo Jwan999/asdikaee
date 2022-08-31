@@ -9,6 +9,9 @@ class Order extends Model
 {
     use HasFactory;
     public $guarded;
+    protected $casts = [
+        "payment_details"=>"json",
+        ];
     public function items(){
         return $this->hasMany(OrderItem::Class);
     }

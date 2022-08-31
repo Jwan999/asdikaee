@@ -23,7 +23,8 @@
         "laravel/tinker": "^2.5",
         "lathanhvien/nova-text-currency": "^1.0",
         "theme/asdikaee": "*",
-        "vyuldashev/nova-money-field": "^1.4"
+        "vyuldashev/nova-money-field": "^1.4",
+        "hdrm147/zain-cash": "*"
     },
     "repositories": [
         {
@@ -33,6 +34,10 @@
         {
             "type": "path",
             "url": "./nova-components/Asdikaee"
+        },
+        {
+            "type": "path",
+            "url": "./zain-cash"
         }
     ],
     "require-dev": {
@@ -55,6 +60,7 @@
             "Tests\\": "tests/"
         }
     },
+
     "scripts": {
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
