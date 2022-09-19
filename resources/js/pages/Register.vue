@@ -32,7 +32,7 @@ export default {
         name: this.name,
         address: this.address,
       }).then(response => {
-        console.log(response)
+        // console.log(response)
         // window.location.reload();
       })
     },

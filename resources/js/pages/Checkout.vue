@@ -64,6 +64,20 @@
                         <div v-for="error in validationErrors.full_name" class="w-full mb-2">
                             <h1 class="text-red-500 text-sm">{{ error }}</h1>
                         </div>
+                        <div class="mb-3">
+                            <h1 class="text-gray-800 text-sm mb-2 font-bold">المحافظة</h1>
+                            <select name="city" v-model="selected"
+                                    class="rounded-2xl w-full px-3 pl-6 py-4 outline-none border-2 border-gray-300 focus:border-gray-700 bg-white">
+
+                                <option hidden selected>المحافظة</option>
+                                <option v-for="city in cities">{{ city.name }}</option>
+
+                            </select>
+                        </div>
+                        <!--todo complete error message-->
+                        <div v-for="error in validationErrors.city" class="w-full mb-2">
+                            <h1 class="text-red-500 text-sm">{{ error }}</h1>
+                        </div>
 
                         <div class="mb-3">
                             <h1 class="text-gray-800 text-sm mb-2 font-bold">العنوان</h1>
@@ -150,12 +164,15 @@
 
 
                         </div>
-                        <p class="text-xl mt-6">
-                            عدد المنتجات {{ items.length }}
-                        </p>
+                        <!--                        <p class="text-xl mt-6">-->
+                        <!--                            عدد المنتجات {{ items.length }}-->
+                        <!--                        </p>-->
                         <div class="border-t border-gray-500 my-3"></div>
-                        <p class="text-xl">
-                            السعر الكامل {{ total }}
+                        <p class="text-lg">
+                            كلفة الطلب: IQD {{ total }}
+                        </p>
+                        <p v-if="selected != 'المحافظة'" class="text-lg">
+                            كلفة التوصيل: IQD {{ deliveryCharge }}
                         </p>
                         <button
                             @click="checkout"
@@ -185,15 +202,75 @@ export default {
     },
     data() {
         return {
-            fullName: 'Haidar Mahmoud',
-            phoneNumberOne: '07810424140',
-            phoneNumberTwo: '07810424140',
-            address: 'شارع السعدون',
-            closestMark: 'شارع الزعيم',
-            emailAddress: 'me@hdrm.dev',
+            fullName: '',
+            phoneNumberOne: '',
+            phoneNumberTwo: '',
+            address: '',
+            closestMark: '',
+            emailAddress: '',
             paymentType: '',
             orderStatus: null,
             validationErrors: [],
+            deliveryCharge: '',
+            selected: 'المحافظة',
+            cities: [
+                {
+                    name: 'بغداد',
+                    deliveryCharge: '4000'
+                }, {
+                    name: 'أربيل',
+                    deliveryCharge: '8000'
+                }, {
+                    name: 'الأنبار',
+                    deliveryCharge: '8000'
+                }, {
+                    name: 'بابل',
+                    deliveryCharge: '8000'
+                }, {
+                    name: 'البصرة',
+                    deliveryCharge: '8000'
+                }, {
+                    name: 'حلبجة',
+                    deliveryCharge: '8000'
+                }, {
+                    name: 'دهوك',
+                    deliveryCharge: '8000'
+                }, {
+                    name: 'القادسية',
+                    deliveryCharge: '8000'
+                }, {
+                    name: 'ديالى',
+                    deliveryCharge: '8000'
+                }, {
+                    name: 'ذي قار',
+                    deliveryCharge: '8000'
+                }, {
+                    name: 'السليمانية',
+                    deliveryCharge: '8000'
+                }, {
+                    name: 'كركوك',
+                    deliveryCharge: '8000'
+                }, {
+                    name: 'كربلاء',
+                    deliveryCharge: '8000'
+                }, {
+                    name: 'المثنى',
+                    deliveryCharge: '8000'
+                }, {
+                    name: 'ميسان',
+                    deliveryCharge: '8000'
+                }, {
+                    name: 'النجف',
+                    deliveryCharge: '8000'
+                }, {
+                    name: 'نينوى',
+                    deliveryCharge: '8000'
+                }, {
+                    name: 'واسط',
+                    deliveryCharge: '8000'
+                },
+            ],
+
         }
     },
 
@@ -202,9 +279,14 @@ export default {
     },
 
     methods: {
+
         sendUserData() {
+            if (this.selected == 'المحافظة') {
+                this.selected = null
+            }
             axios.post('/api/orders', {
                 full_name: this.fullName,
+                city: this.selected,
                 phone_one: this.phoneNumberOne,
                 phone_two: this.phoneNumberTwo,
                 address: this.address,
@@ -212,40 +294,56 @@ export default {
                 email: this.emailAddress,
                 payment_type: this.paymentType,
                 items: this.items,
-                total: this.total
+                total: parseInt(this.total) + parseInt(this.deliveryCharge)
             })
                 .then(response => {
+                    // console.log(response)
                     this.orderStatus = true
                     this.$store.dispatch("clearCart");
-                    console.log(response.data.order);
+                    // console.log(response.data.order);
                     if (response.data.order.payment_type == "Zain Cash") {
-                        this.$router.push({name: "zain-cash",params: {
-                            zain: response.data.zain,
-                            order: response.data.order,
-                            orderId: response.data.order.id,
-                            }})
+                        this.$router.push({
+                            name: "zain-cash", params: {
+                                zain: response.data.zain,
+                                order: response.data.order,
+                                orderId: response.data.order.id,
+                            }
+                        })
                     }
                 })
                 .catch((error) => {
                     this.validationErrors = error.response.data.errors
+                    // console.log(error.response.data.errors)
                 })
-        },
+
+        }
+        ,
         checkout() {
             if (this.paymentType === 'Cash') {
                 this.sendUserData();
             } else if (this.paymentType === 'Zain Cash') {
                 // this.sendUserData();
-
             } else {
                 this.sendUserData();
             }
-        },
+        }
+        ,
 
         goBack() {
             this.$router.back();
         }
     },
+
     watch: {
+        // whenever question changes, this function will run
+        selected(newValue, oldValue) {
+            // console.log(newVal)
+            this.deliveryCharge = this.cities.find(city => city.name === newValue).deliveryCharge
+            // console.log(this.deliveryCharge)
+            // this.$refs['prefix'].value = this.code
+
+        }
+        ,
         orderStatus: function () {
             if (this.orderStatus) {
                 setTimeout(order => {
@@ -254,7 +352,8 @@ export default {
                 }, 4000);
             }
         }
-    },
+    }
+    ,
 
 }
 </script>

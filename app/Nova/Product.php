@@ -4,6 +4,7 @@ namespace App\Nova;
 
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
+
 //use Laravel\Nova\Fields\Currency;
 //use Pifpif\NovaTextCurrency\Currency;
 use Laravel\Nova\Fields\Currency;
@@ -71,7 +72,7 @@ class Product extends Resource
             Text::make(__("Name"), 'name')->rules("required", "max:255")->sortable(),
             Textarea::make(__("Description"), 'description'),
             Image::make(__("Image"), "preview_img")->creationRules("required", "image")->disk('public'),
-            Number::make(__("Price"), 'price'),
+            Currency::make(__("Price"), 'price')->currency('IQD'),
 //            Currency::make('Price')->currency('IQD'),
             BelongsTo::make(__("Category"), "category", Category::Class)->showCreateRelationButton(),
         ];

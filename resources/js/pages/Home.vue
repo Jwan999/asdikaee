@@ -9,13 +9,9 @@
             <div class="flex flex-wrap items-center justify-between">
                 <div class="lg:w-6/12 w-full">
                     <h1 class="lg:text-5xl text-4xl font-bold text-blue-700">
-                        مجلة اصدقائي
+                        متجر اصدقائي
                     </h1>
-                    <p class="mt-10 lg:text-xl text-base">
-                        اطلالة الى عالم الطفولة، سنعيش معا مغامرات شيقة
-                        نعزف من خلالها لحنا في كل ما نتمناه لكم من ثقافة واخلاق
-                        رفيعة ومتعة وابداع
-                    </p>
+                    <p class="mt-10 lg:text-xl text-base">عالم بلا حدود لكل من يبحث عن الثقافة والمتعة والخيال.</p>
                     <div class="mt-10">
                         <button type="button"
                                 class="lg:py-3 text-xl lg:px-6 py-3 px-5 bg-red-500 text-white rounded-2xl shadow-lg">
@@ -29,7 +25,7 @@
                 </div>
 
                 <div class="lg:w-6/12 w-full flex lg:justify-end justify-center mt-6 lg:mt-0">
-                    <img class="w-10/12" src="images/charechtersWelcoming.png" alt="">
+                    <img class="w-11/12 mt-4" src="images/charechtersWelcoming.png" alt="">
                 </div>
 
             </div>
@@ -54,13 +50,13 @@
                 <!--products-->
 
 
-                <!--                grid lg:grid-cols-4 md:grid-cols-3 gap-6 grid-cols-1 lg:justify-items-start justify-items-center mt-10-->
+                <!--grid lg:grid-cols-4 md:grid-cols-3 gap-6 grid-cols-1 lg:justify-items-start justify-items-center mt-10-->
                 <div class="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-10 mt-10">
                     <!--// loop through the products array, create a <product> component for each and pass the object as 'product' prop-->
                     <product v-for="product in products" :hide-price="true" :key="`product-${product.id}`"
                              :product="product"></product>
 
-                    <!--      <category v-for="category in categories" :key="`catxegory-${category.id}`" :category="category"></category>-->
+                    <!--<category v-for="category in categories" :key="`catxegory-${category.id}`" :category="category"></category>-->
 
                 </div>
             </div>
@@ -108,13 +104,13 @@ export default {
                     category: category,
                 }
             }).then(response => {
-                console.log(response)
+                // console.log(response)
 
                 this.products = response.data.products;
 
                 if (category !== undefined) {
                     this.activeCategories = category
-                    console.log(this.activeCategories)
+                    // console.log(this.activeCategories)
                 }
 
             })

@@ -3,6 +3,9 @@ import Home from "./pages/Home";
 import Checkout from "./pages/Checkout";
 import Register from "./pages/Register";
 import OrdersStatus from "./pages/ordersStatus";
+import ProductView from "./pages/ProductView";
+import About from "./pages/About";
+
 
 import Login from "./pages/Login";
 import ZainCash from "./pages/ZainCash";
@@ -34,8 +37,17 @@ export default [
         }),
     },
     {
+        // add id to get product page
+        path: "/product/:id",
+        component: ProductView,
+    },
+    {
         path: "/checkout",
         component: Checkout
+    },
+    {
+        path: "/about",
+        component: About
     },
     {
         path: "/login",

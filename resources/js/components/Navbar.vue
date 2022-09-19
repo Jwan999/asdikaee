@@ -1,9 +1,11 @@
 <template>
-    <div class="sticky top-0">
-        <div class="flex lg:flex-row flex-col justify-between py-3 px-6 rounded-b-3xl bg-red-500 text-white">
+    <div class="sticky top-0 z-10">
+        <div class="flex lg:flex-row flex-col justify-between py-2 px-6 rounded-b-3xl bg-red-500 text-white">
 
             <div class="flex items-center justify-between font-red-500">
-                <img class="w-28" src="images/asdikaee.png" alt="">
+                <a href="/">
+                    <img class="w-32" src="/images/asdikaee.png" alt="">
+                </a>
 
                 <div class="lg:hidden flex cursor-pointer" @click="openMenu()">
                     <svg class="fill-current text-white h-7 w-7" viewBox="0 0 24 24"
@@ -21,13 +23,18 @@
                  class="flex flex-wrap items-center lg:mt-0 mt-6 lg:space-y-0 space-y-5">
 
                 <a class="text-xl lg:w-auto lg:ml-8 w-full transform hover:scale-110 transition ease-out duration-200"
+                   href="/about">من نحن</a>
+
+                <a class="text-xl lg:w-auto lg:ml-8 w-full transform hover:scale-110 transition ease-out duration-200"
                    href="/#store">المتجر</a>
 
-                <a class="text-xl lg:w-auto lg:ml-8 w-full transform hover:scale-110 transition ease-out duration-200"
+                <a target="_blank"
+                   class="text-xl lg:w-auto lg:ml-8 w-full transform hover:scale-110 transition ease-out duration-200"
                    href="https://www.asdikaee.com/">موقع مجلة اصدقائي</a>
 
-                <a class="text-xl lg:w-auto lg:ml-8 w-full transform hover:scale-110 transition ease-out duration-200"
-                   href="">قناة اصدقائي</a>
+                <a target="_blank"
+                   class="text-xl lg:w-auto lg:ml-8 w-full transform hover:scale-110 transition ease-out duration-200"
+                   href="https://www.youtube.com/channel/UCVq2GEAU0QAjYGgaxQxoh0Q">قناة اصدقائي</a>
 
             </div>
 

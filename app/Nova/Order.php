@@ -81,6 +81,7 @@ class Order extends Resource
             Text::make(__("Email Address"), "email"),
             Text::make(__("Location"), "address"),
             Text::make(__("Closest Landmark"), "closest_mark"),
+            Text::make(__("City"), "city"),
 //            Text::make(__("Payment Type"), "payment_type"),
 //            Text::make(__("Dispatched At"), "dispatched_at"),
             RadioButton::make(__('Payment Type'), 'payment_type')

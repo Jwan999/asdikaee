@@ -35,6 +35,8 @@ Route::post('/register', [RegisterCustomerController::class, 'register']);
 Route::post('/api/orders', [APIController::class, 'createOrder']);
 Route::get("/api/orders", [APIController::class, 'getCustomerOrders']);
 Route::get("/api/cart/products", [APIController::class, 'getCartProducts']);
+Route::get('/api/product', [APIController::class, 'getProduct']);
+
 Route::get('/zain-cash/{order}/completed', [Controller::class, 'showApplication'])->where("any", "(?!nova)(.*)");
 
 Route::get('/{any}', [Controller::class, 'showApplication'])->where("any", "(?!nova)(.*)");

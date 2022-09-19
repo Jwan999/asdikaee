@@ -22,9 +22,7 @@ class APIController extends Controller
 
     public function getProducts(Request $request)
     {
-//        dd($request->category != null);
         if ($request->category != null) {
-//            dd('hehhlo');
             $products = Product::where('category_id', $request->category)->get();
 
         } else {
@@ -37,9 +35,15 @@ class APIController extends Controller
 
     }
 
+    public function getProduct(Request $request)
+    {
+        return Response::json([
+            "product" => Product::find($request->id)
+        ]);
+    }
+
     public function getCategories()
     {
-//        dd('test');
         $categories = Category::all();
         return Response::json([
             "categories" => $categories
@@ -48,7 +52,6 @@ class APIController extends Controller
 
     public function getCustomerOrders(Request $request)
     {
-
         $orders = Order::whereEmail($request->email)->with("items.product")->get();
 //        $orders = Order::where('email', $request->email)->with('items.product')->get();
         return Response::json([
@@ -60,8 +63,10 @@ class APIController extends Controller
 
     public function createOrder(Request $request)
     {
+
         $rules = $request->validate([
             'full_name' => 'required',
+            'city' => 'required',
             'address' => 'required',
             'email' => 'required|email',
             'phone_one' => 'required|numeric',
@@ -78,6 +83,7 @@ class APIController extends Controller
         $order->phone_two = $request->phone_two;
         $order->closest_mark = $request->closest_mark;
         $order->payment_type = $request->payment_type;
+        $order->city = $request->city;
 //        $order->customer_id = auth()->id();
         $order->total = $request->total;
         $order->save();
@@ -100,7 +106,7 @@ class APIController extends Controller
                 "merchant_id" => config("zaincash.merchant_id"),
                 "production_cred" => config("zaincash.is_production"),
                 "language" => "ar",
-                "redirection_url" =>  config("app.url") . "/zain-cash/$order->id/completed"
+                "redirection_url" => config("app.url") . "/zain-cash/$order->id/completed"
             ];
 
             $zainCash = new ZainCash($data);
