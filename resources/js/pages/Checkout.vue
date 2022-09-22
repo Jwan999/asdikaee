@@ -322,7 +322,7 @@ export default {
             if (this.paymentType === 'Cash') {
                 this.sendUserData();
             } else if (this.paymentType === 'Zain Cash') {
-                // this.sendUserData();
+                this.sendUserData();
             } else {
                 this.sendUserData();
             }
