@@ -168,7 +168,7 @@
                         <!--                            عدد المنتجات {{ items.length }}-->
                         <!--                        </p>-->
                         <div class=""></div>
-                        <hr class="my-4" >
+                        <hr class="my-4">
 
                         <p class="text-lg text-gray-800">
                             كلفة الطلب: IQD {{ total }}
