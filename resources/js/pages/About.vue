@@ -1,12 +1,16 @@
 <template>
     <div>
         <navbar></navbar>
+
         <div>
             <h1 class="lg:text-4xl text-3xl lg:mb-10 mb-6 text-center text-red-500 font-bold mt-28">من نحن</h1>
             <div class=" px-4 lg:px-24 mt-24">
-                <div class="w-full bg-white lg:px-10 px-4 py-6 rounded-2xl">
-                    <h1 class="text-xl mb-4 text-blue-600"> دار الصفار للطباعة والنشر والاعلام</h1>
-                    <p class="text-justify">شركة دار الصفار للطباعة والنشر والاعلام.. تأسست لتعنى بكل ما يهم عالم
+                <div @click="darAlsafar = !darAlsafar"
+                     class="w-full bg-white lg:px-10 px-4 py-6 rounded-2xl hover:shadow-lg cursor-pointer">
+                    <h1 class="text-xl text-blue-600"> دار الصفار للطباعة والنشر والاعلام</h1>
+                    <hr v-show="darAlsafar" class="my-4">
+                    <p v-show="darAlsafar" class="text-justify transition-[max-height] duration-500">شركة دار
+                        الصفار للطباعة والنشر والاعلام.. تأسست لتعنى بكل ما يهم عالم
                         الطفولة العراقية في الثقافة والعلوم والفنون والمتعة والتسلية والابداع..
                         <br>
                         تنفرد الشركة بنشاطها
@@ -26,10 +30,14 @@
                         نحن نعمل بجد من اجل بناء جيل الغد الأكثر اشراقا ذلك هو هدفنا وشعارنا منذ اليوم الاول..
                         رحلتنا مستمرة والقادم مليء بكل ما هو مميز وابداعنا بلا حدود.
                     </p>
+
                 </div>
-                <div class="w-full bg-white lg:px-10 px-4 py-6 rounded-2xl mt-24">
-                    <h1 class="text-xl mb-4 text-blue-600 ">متجر اصدقائي</h1>
-                    <p class="text-justify">يعتبر متجر أصدقائي الذي تأسس في العام 2022 في بغداد المتجر الالكتروني الرسمي
+                <div @click="asdikaee = !asdikaee"
+                     class="w-full bg-white lg:px-10 px-4 py-6 rounded-2xl mt-10 hover:shadow-lg cursor-pointer">
+                    <h1 class="text-xl text-blue-600 ">متجر اصدقائي</h1>
+                    <hr v-show="asdikaee" class="my-4">
+                    <p v-show="asdikaee" class="text-justify transition-[max-height] duration-500">يعتبر متجر
+                        أصدقائي الذي تأسس في العام 2022 في بغداد المتجر الالكتروني الرسمي
                         لشركة دار الصفار
                         للطباعة والنشر والاعلام.. والذي يوفر كل ما تنتجه الدار من مجلات وقصص وألعاب ذكاء وتسلية، فضلا عن
                         احتوائه على مكتبة رقمية لمطبوعات الدار، تضاف لها ملفات صوتية للقصص التي تصدر عن الدار..
@@ -45,6 +53,7 @@
                         <br>
                         مع تقديرنا العالي لكم.
                     </p>
+
                 </div>
 
             </div>
@@ -58,7 +67,14 @@ import Navbar from "../components/Navbar";
 
 export default {
     name: "About",
-    components: {Navbar}
+    components: {Navbar},
+    data() {
+        return {
+            darAlsafar: false,
+            asdikaee: false,
+        }
+    },
+
 }
 </script>
 

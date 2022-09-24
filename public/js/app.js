@@ -2187,11 +2187,26 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "About",
   components: {
     Navbar: _components_Navbar__WEBPACK_IMPORTED_MODULE_0__.default
+  },
+  data: function data() {
+    return {
+      darAlsafar: false,
+      asdikaee: false
+    };
   }
 });
 
@@ -2219,6 +2234,12 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -2534,7 +2555,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     checkout: function checkout() {
       if (this.paymentType === 'Cash') {
         this.sendUserData();
-      } else if (this.paymentType === 'Zain Cash') {// this.sendUserData();
+      } else if (this.paymentType === 'Zain Cash') {
+        this.sendUserData();
       } else {
         this.sendUserData();
       }
@@ -5042,89 +5064,158 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [_c("navbar"), _vm._v(" "), _vm._m(0)], 1)
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", [
-      _c(
-        "h1",
-        {
-          staticClass:
-            "lg:text-4xl text-3xl lg:mb-10 mb-6 text-center text-red-500 font-bold mt-28"
-        },
-        [_vm._v("من نحن")]
-      ),
+  return _c(
+    "div",
+    [
+      _c("navbar"),
       _vm._v(" "),
-      _c("div", { staticClass: " px-4 lg:px-24 mt-24" }, [
+      _c("div", [
         _c(
-          "div",
-          { staticClass: "w-full bg-white lg:px-10 px-4 py-6 rounded-2xl" },
-          [
-            _c("h1", { staticClass: "text-xl mb-4 text-blue-600" }, [
-              _vm._v(" دار الصفار للطباعة والنشر والاعلام")
-            ]),
-            _vm._v(" "),
-            _c("p", { staticClass: "text-justify" }, [
-              _vm._v(
-                "شركة دار الصفار للطباعة والنشر والاعلام.. تأسست لتعنى بكل ما يهم عالم\n                    الطفولة العراقية في الثقافة والعلوم والفنون والمتعة والتسلية والابداع..\n                    "
-              ),
-              _c("br"),
-              _vm._v(
-                "\n                    تنفرد الشركة بنشاطها\n                    التفاعلي المتميز في بناء شخصية الطفل من خلال اصداراتها لمطبوعات الأطفال وفي مقدمتها (مجلة\n                    أصدقائي).. فضلا عن العديد من النشاطات وورش العمل والمهرجانات والمسابقات ومنها (مسابقة نقرأ\n                    لنبتكر لكتابة قصص بأقلام الأطفال) و(مهرجان المواهب للأطفال) بما يعزز الأهداف التي تأسست من اجلها\n                    الشركة.\n                    "
-              ),
-              _c("br"),
-              _vm._v(
-                "\n                    نفذت الشركة منذ تأسيسها العديد من الفعاليات والمبادرات بالتعاون مع جهات عراقية ودولية لها دور\n                    ومساهمة فاعلة في رعاية الطفولة العراقية منها: (البنك المركزي العراقي، رابطة المصارف العراقية،\n                    مصرف اشور الدولي، ومنظمة أطفال العراق) وغيرها من الشراكات التي تهتم بتطوير وبناء شخصية الطفل\n                    العراقي وخلق أجيال متميزة تتمتع بالعلم والثقافة وتنمية الابداع ودعمه.\n                    "
-              ),
-              _c("br"),
-              _vm._v(
-                "\n                    كما حازت الشركة العديد من الجوائز المحلية والدولية كان في مقدمتها جائزة رواد العراق لريادة\n                    الاعمال التي نظمها البنك الدولي عام 2019، فضلا عن درع التميز من غرفة تجارة بغداد عام 2020.\n                    "
-              ),
-              _c("br"),
-              _vm._v(
-                "\n                    نحن نعمل بجد من اجل بناء جيل الغد الأكثر اشراقا ذلك هو هدفنا وشعارنا منذ اليوم الاول..\n                    رحلتنا مستمرة والقادم مليء بكل ما هو مميز وابداعنا بلا حدود.\n                "
-              )
-            ])
-          ]
+          "h1",
+          {
+            staticClass:
+              "lg:text-4xl text-3xl lg:mb-10 mb-6 text-center text-red-500 font-bold mt-28"
+          },
+          [_vm._v("من نحن")]
         ),
         _vm._v(" "),
-        _c(
-          "div",
-          {
-            staticClass: "w-full bg-white lg:px-10 px-4 py-6 rounded-2xl mt-24"
-          },
-          [
-            _c("h1", { staticClass: "text-xl mb-4 text-blue-600 " }, [
-              _vm._v("متجر اصدقائي")
-            ]),
-            _vm._v(" "),
-            _c("p", { staticClass: "text-justify" }, [
-              _vm._v(
-                "يعتبر متجر أصدقائي الذي تأسس في العام 2022 في بغداد المتجر الالكتروني الرسمي\n                    لشركة دار الصفار\n                    للطباعة والنشر والاعلام.. والذي يوفر كل ما تنتجه الدار من مجلات وقصص وألعاب ذكاء وتسلية، فضلا عن\n                    احتوائه على مكتبة رقمية لمطبوعات الدار، تضاف لها ملفات صوتية للقصص التي تصدر عن الدار..\n                    "
-              ),
-              _c("br"),
-              _vm._v(
-                "\n                    كما\n                    يحتوي المتجر على العديد من المنتجات الدعائية التي تستقطب الأطفال وبما يتوافق مع ميولهم المتنوعة\n                    وهواياتهم المتعددة.\n                    "
-              ),
-              _c("br"),
-              _vm._v(
-                "\n                    وبالنتيجة فإن الهدف الأساس من المتجر هو نشر العلم والمعرفة والمتعة للطفل العراقي والارتقاء به\n                    نحو مستقبل أفضل كباقي اقرانه في كل انحاء العالم.\n                    تعمل شركتنا جاهدة ليكون موقعها رائداً في مجال العولمة الإلكترونيّة، كما تسعى لتطويره دائما\n                    مواكِبة لاي تطور اولا بأول، ليسهل على متابعينا الأعزاء الوصول الى منتجاتنا أينما كانوا..\n                    "
-              ),
-              _c("br"),
-              _vm._v(
-                "\n                    مع تقديرنا العالي لكم.\n                "
+        _c("div", { staticClass: " px-4 lg:px-24 mt-24" }, [
+          _c(
+            "div",
+            {
+              staticClass:
+                "w-full bg-white lg:px-10 px-4 py-6 rounded-2xl hover:shadow-lg cursor-pointer",
+              on: {
+                click: function($event) {
+                  _vm.darAlsafar = !_vm.darAlsafar
+                }
+              }
+            },
+            [
+              _c("h1", { staticClass: "text-xl text-blue-600" }, [
+                _vm._v(" دار الصفار للطباعة والنشر والاعلام")
+              ]),
+              _vm._v(" "),
+              _c("hr", {
+                directives: [
+                  {
+                    name: "show",
+                    rawName: "v-show",
+                    value: _vm.darAlsafar,
+                    expression: "darAlsafar"
+                  }
+                ],
+                staticClass: "my-4"
+              }),
+              _vm._v(" "),
+              _c(
+                "p",
+                {
+                  directives: [
+                    {
+                      name: "show",
+                      rawName: "v-show",
+                      value: _vm.darAlsafar,
+                      expression: "darAlsafar"
+                    }
+                  ],
+                  staticClass:
+                    "text-justify transition-[max-height] duration-500"
+                },
+                [
+                  _vm._v(
+                    "شركة دار\n                    الصفار للطباعة والنشر والاعلام.. تأسست لتعنى بكل ما يهم عالم\n                    الطفولة العراقية في الثقافة والعلوم والفنون والمتعة والتسلية والابداع..\n                    "
+                  ),
+                  _c("br"),
+                  _vm._v(
+                    "\n                    تنفرد الشركة بنشاطها\n                    التفاعلي المتميز في بناء شخصية الطفل من خلال اصداراتها لمطبوعات الأطفال وفي مقدمتها (مجلة\n                    أصدقائي).. فضلا عن العديد من النشاطات وورش العمل والمهرجانات والمسابقات ومنها (مسابقة نقرأ\n                    لنبتكر لكتابة قصص بأقلام الأطفال) و(مهرجان المواهب للأطفال) بما يعزز الأهداف التي تأسست من اجلها\n                    الشركة.\n                    "
+                  ),
+                  _c("br"),
+                  _vm._v(
+                    "\n                    نفذت الشركة منذ تأسيسها العديد من الفعاليات والمبادرات بالتعاون مع جهات عراقية ودولية لها دور\n                    ومساهمة فاعلة في رعاية الطفولة العراقية منها: (البنك المركزي العراقي، رابطة المصارف العراقية،\n                    مصرف اشور الدولي، ومنظمة أطفال العراق) وغيرها من الشراكات التي تهتم بتطوير وبناء شخصية الطفل\n                    العراقي وخلق أجيال متميزة تتمتع بالعلم والثقافة وتنمية الابداع ودعمه.\n                    "
+                  ),
+                  _c("br"),
+                  _vm._v(
+                    "\n                    كما حازت الشركة العديد من الجوائز المحلية والدولية كان في مقدمتها جائزة رواد العراق لريادة\n                    الاعمال التي نظمها البنك الدولي عام 2019، فضلا عن درع التميز من غرفة تجارة بغداد عام 2020.\n                    "
+                  ),
+                  _c("br"),
+                  _vm._v(
+                    "\n                    نحن نعمل بجد من اجل بناء جيل الغد الأكثر اشراقا ذلك هو هدفنا وشعارنا منذ اليوم الاول..\n                    رحلتنا مستمرة والقادم مليء بكل ما هو مميز وابداعنا بلا حدود.\n                "
+                  )
+                ]
               )
-            ])
-          ]
-        )
+            ]
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            {
+              staticClass:
+                "w-full bg-white lg:px-10 px-4 py-6 rounded-2xl mt-10 hover:shadow-lg cursor-pointer",
+              on: {
+                click: function($event) {
+                  _vm.asdikaee = !_vm.asdikaee
+                }
+              }
+            },
+            [
+              _c("h1", { staticClass: "text-xl text-blue-600 " }, [
+                _vm._v("متجر اصدقائي")
+              ]),
+              _vm._v(" "),
+              _c("hr", {
+                directives: [
+                  {
+                    name: "show",
+                    rawName: "v-show",
+                    value: _vm.asdikaee,
+                    expression: "asdikaee"
+                  }
+                ],
+                staticClass: "my-4"
+              }),
+              _vm._v(" "),
+              _c(
+                "p",
+                {
+                  directives: [
+                    {
+                      name: "show",
+                      rawName: "v-show",
+                      value: _vm.asdikaee,
+                      expression: "asdikaee"
+                    }
+                  ],
+                  staticClass:
+                    "text-justify transition-[max-height] duration-500"
+                },
+                [
+                  _vm._v(
+                    "يعتبر متجر\n                    أصدقائي الذي تأسس في العام 2022 في بغداد المتجر الالكتروني الرسمي\n                    لشركة دار الصفار\n                    للطباعة والنشر والاعلام.. والذي يوفر كل ما تنتجه الدار من مجلات وقصص وألعاب ذكاء وتسلية، فضلا عن\n                    احتوائه على مكتبة رقمية لمطبوعات الدار، تضاف لها ملفات صوتية للقصص التي تصدر عن الدار..\n                    "
+                  ),
+                  _c("br"),
+                  _vm._v(
+                    "\n                    كما\n                    يحتوي المتجر على العديد من المنتجات الدعائية التي تستقطب الأطفال وبما يتوافق مع ميولهم المتنوعة\n                    وهواياتهم المتعددة.\n                    "
+                  ),
+                  _c("br"),
+                  _vm._v(
+                    "\n                    وبالنتيجة فإن الهدف الأساس من المتجر هو نشر العلم والمعرفة والمتعة للطفل العراقي والارتقاء به\n                    نحو مستقبل أفضل كباقي اقرانه في كل انحاء العالم.\n                    تعمل شركتنا جاهدة ليكون موقعها رائداً في مجال العولمة الإلكترونيّة، كما تسعى لتطويره دائما\n                    مواكِبة لاي تطور اولا بأول، ليسهل على متابعينا الأعزاء الوصول الى منتجاتنا أينما كانوا..\n                    "
+                  ),
+                  _c("br"),
+                  _vm._v(
+                    "\n                    مع تقديرنا العالي لكم.\n                "
+                  )
+                ]
+              )
+            ]
+          )
+        ])
       ])
-    ])
-  }
-]
+    ],
+    1
+  )
+}
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -5688,11 +5779,11 @@ var render = function() {
                         2
                       ),
                       _vm._v(" "),
-                      _c("div", {
-                        staticClass: "border-t border-gray-500 my-3"
-                      }),
+                      _c("div", {}),
                       _vm._v(" "),
-                      _c("p", { staticClass: "text-lg" }, [
+                      _c("hr", { staticClass: "my-4" }),
+                      _vm._v(" "),
+                      _c("p", { staticClass: "text-lg text-gray-800" }, [
                         _vm._v(
                           "\n                        كلفة الطلب: IQD " +
                             _vm._s(_vm.total) +
@@ -5700,14 +5791,32 @@ var render = function() {
                         )
                       ]),
                       _vm._v(" "),
-                      _vm.selected != "المحافظة"
-                        ? _c("p", { staticClass: "text-lg" }, [
+                      _vm.selected != "المحافظة" && _vm.selected != null
+                        ? _c("p", { staticClass: "text-lg text-gray-800" }, [
                             _vm._v(
                               "\n                        كلفة التوصيل: IQD " +
                                 _vm._s(_vm.deliveryCharge) +
                                 "\n                    "
                             )
                           ])
+                        : _vm._e(),
+                      _vm._v(" "),
+                      _vm.selected != "المحافظة" && _vm.selected != null
+                        ? _c("hr", { staticClass: "my-4" })
+                        : _vm._e(),
+                      _vm._v(" "),
+                      _vm.selected != "المحافظة" && _vm.selected != null
+                        ? _c(
+                            "p",
+                            { staticClass: "text-lg text-blue-500 font-bold" },
+                            [
+                              _vm._v(
+                                "\n                        الكلفة الكلية: IQD " +
+                                  _vm._s(_vm.total + _vm.deliveryCharge) +
+                                  "\n                    "
+                              )
+                            ]
+                          )
                         : _vm._e(),
                       _vm._v(" "),
                       _c(

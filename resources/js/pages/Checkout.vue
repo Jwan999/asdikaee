@@ -167,12 +167,18 @@
                         <!--                        <p class="text-xl mt-6">-->
                         <!--                            عدد المنتجات {{ items.length }}-->
                         <!--                        </p>-->
-                        <div class="border-t border-gray-500 my-3"></div>
-                        <p class="text-lg">
+                        <div class=""></div>
+                        <hr class="my-4" >
+
+                        <p class="text-lg text-gray-800">
                             كلفة الطلب: IQD {{ total }}
                         </p>
-                        <p v-if="selected != 'المحافظة'" class="text-lg">
+                        <p v-if="selected !=  'المحافظة' && selected != null" class="text-lg text-gray-800">
                             كلفة التوصيل: IQD {{ deliveryCharge }}
+                        </p>
+                        <hr class="my-4" v-if="selected != 'المحافظة' && selected != null">
+                        <p v-if="selected != 'المحافظة' && selected != null" class="text-lg text-blue-500 font-bold">
+                            الكلفة الكلية: IQD {{ total + deliveryCharge }}
                         </p>
                         <button
                             @click="checkout"
