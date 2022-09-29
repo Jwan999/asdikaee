@@ -178,7 +178,7 @@
                         </p>
                         <hr class="my-4" v-if="selected != 'المحافظة' && selected != null">
                         <p v-if="selected != 'المحافظة' && selected != null" class="text-lg text-blue-500 font-bold">
-                            الكلفة الكلية: IQD {{ total + deliveryCharge }}
+                            الكلفة الكلية: IQD {{ parseInt(total) + parseInt(deliveryCharge) }}
                         </p>
                         <button
                             @click="checkout"
