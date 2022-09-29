@@ -180,6 +180,7 @@
                         <p v-if="selected != 'المحافظة' && selected != null" class="text-lg text-blue-500 font-bold">
                             الكلفة الكلية: IQD {{ parseInt(total) + parseInt(deliveryCharge) }}
                         </p>
+
                         <button
                             @click="checkout"
                             class="bg-red-500 focus:bg-red-600-500 py-3 px-4 text-white rounded-2xl shadow-lg mt-6 hover:bg-red-600 cursor-pointer">
