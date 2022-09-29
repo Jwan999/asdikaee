@@ -217,63 +217,63 @@ export default {
             paymentType: '',
             orderStatus: null,
             validationErrors: [],
-            deliveryCharge: '',
+            deliveryCharge: 0,
             selected: 'المحافظة',
             cities: [
                 {
                     name: 'بغداد',
-                    deliveryCharge: '4000'
+                    deliveryCharge: 4000
                 }, {
                     name: 'أربيل',
-                    deliveryCharge: '8000'
+                    deliveryCharge: 8000
                 }, {
                     name: 'الأنبار',
-                    deliveryCharge: '8000'
+                    deliveryCharge: 8000
                 }, {
                     name: 'بابل',
-                    deliveryCharge: '8000'
+                    deliveryCharge: 8000
                 }, {
                     name: 'البصرة',
-                    deliveryCharge: '8000'
+                    deliveryCharge: 8000
                 }, {
                     name: 'حلبجة',
-                    deliveryCharge: '8000'
+                    deliveryCharge: 8000
                 }, {
                     name: 'دهوك',
-                    deliveryCharge: '8000'
+                    deliveryCharge: 8000
                 }, {
                     name: 'القادسية',
-                    deliveryCharge: '8000'
+                    deliveryCharge: 8000
                 }, {
                     name: 'ديالى',
-                    deliveryCharge: '8000'
+                    deliveryCharge: 8000
                 }, {
                     name: 'ذي قار',
-                    deliveryCharge: '8000'
+                    deliveryCharge: 8000
                 }, {
                     name: 'السليمانية',
-                    deliveryCharge: '8000'
+                    deliveryCharge: 8000
                 }, {
                     name: 'كركوك',
-                    deliveryCharge: '8000'
+                    deliveryCharge: 8000
                 }, {
                     name: 'كربلاء',
-                    deliveryCharge: '8000'
+                    deliveryCharge: 8000
                 }, {
                     name: 'المثنى',
-                    deliveryCharge: '8000'
+                    deliveryCharge: 8000
                 }, {
                     name: 'ميسان',
-                    deliveryCharge: '8000'
+                    deliveryCharge: 8000
                 }, {
                     name: 'النجف',
-                    deliveryCharge: '8000'
+                    deliveryCharge: 8000
                 }, {
                     name: 'نينوى',
-                    deliveryCharge: '8000'
+                    deliveryCharge: 8000
                 }, {
                     name: 'واسط',
-                    deliveryCharge: '8000'
+                    deliveryCharge: 8000
                 },
             ],
 
