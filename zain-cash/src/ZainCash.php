@@ -7,7 +7,7 @@ use Firebase\JWT\JWT;
 use GuzzleHttp\Client;
 use Illuminate\Support\Facades\Log;
 
-require_once __DIR__ . '/../vendor/autoload.php'; // Autoload files using Composer autoload
+//require_once __DIR__ . '/../vendor/autoload.php'; // Autoload files using Composer autoload
 
 class ZainCash
 {
