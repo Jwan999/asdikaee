@@ -2550,7 +2550,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
           });
         }
       })["catch"](function (error) {
-        _this.validationErrors = error.response.data.errors; // console.log(error.response.data.errors)
+        _this.validationErrors = error.response.data.errors;
+        console.log(error.response.data.errors);
       });
     },
     checkout: function checkout() {

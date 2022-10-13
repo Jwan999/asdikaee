@@ -320,7 +320,7 @@ export default {
                 })
                 .catch((error) => {
                     this.validationErrors = error.response.data.errors
-                    // console.log(error.response.data.errors)
+                    console.log(error.response.data.errors)
                 })
 
         }
