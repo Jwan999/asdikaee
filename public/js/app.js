@@ -2428,10 +2428,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
-//
-//
 
 
 
@@ -5717,55 +5713,6 @@ var render = function() {
                             ]
                           ),
                           _vm._v(" "),
-                          _c(
-                            "div",
-                            { staticClass: "flex items-center mb-4 w-full " },
-                            [
-                              _c("input", {
-                                directives: [
-                                  {
-                                    name: "model",
-                                    rawName: "v-model",
-                                    value: _vm.paymentType,
-                                    expression: "paymentType"
-                                  }
-                                ],
-                                staticClass:
-                                  "w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-500 focus:bg-gray-500 bg-white border-gray-600 ml-2",
-                                attrs: {
-                                  id: "option-2",
-                                  type: "radio",
-                                  name: "payment",
-                                  value: "Zain Cash",
-                                  "aria-labelledby": "option-2",
-                                  "aria-describedby": "option-2"
-                                },
-                                domProps: {
-                                  checked: _vm._q(_vm.paymentType, "Zain Cash")
-                                },
-                                on: {
-                                  change: function($event) {
-                                    _vm.paymentType = "Zain Cash"
-                                  }
-                                }
-                              }),
-                              _vm._v(" "),
-                              _c(
-                                "label",
-                                {
-                                  staticClass:
-                                    "block ml-2 font-medium text-gray-900",
-                                  attrs: { for: "option-2" }
-                                },
-                                [
-                                  _vm._v(
-                                    "\n                                الدفع عن طريق زين كاش\n                            "
-                                  )
-                                ]
-                              )
-                            ]
-                          ),
-                          _vm._v(" "),
                           _vm._l(_vm.validationErrors.payment_type, function(
                             error
                           ) {
@@ -5773,7 +5720,7 @@ var render = function() {
                               _c(
                                 "h1",
                                 { staticClass: "text-red-500 text-sm" },
-                                [_vm._v("اختر احدى طرق الدفع")]
+                                [_vm._v("اختر طريقة الدفع")]
                               )
                             ])
                           })

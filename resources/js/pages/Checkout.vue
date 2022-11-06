@@ -143,23 +143,19 @@
                                     الدفع عند الاستلام
                                 </label>
                             </div>
-                            <div class="flex items-center mb-4 w-full ">
-                                <input v-model="paymentType" id="option-2" type="radio" name="payment" value="Zain Cash"
-                                       class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-500 focus:bg-gray-500 bg-white border-gray-600 ml-2"
-                                       aria-labelledby="option-2" aria-describedby="option-2">
-                                <label for="option-2"
-                                       class="block ml-2 font-medium text-gray-900">
-                                    الدفع عن طريق زين كاش
-                                </label>
-                                <!--                                <a href="https://test.zaincash.iq/" @click="paymentType = 'Zain Cash'"-->
-                                <!--                                   class="zaincash-btn">-->
-                                <!--                                    <img style="vertical-align:middle"-->
-                                <!--                                         src="https://test.zaincash.iq/images/zaincash-ar.png">-->
-                                <!--                                </a>-->
-                            </div>
+                            <!--TODO zain cash payment-->
+                            <!--                            <div class="flex items-center mb-4 w-full ">-->
+                            <!--                                <input v-model="paymentType" id="option-2" type="radio" name="payment" value="Zain Cash"-->
+                            <!--                                       class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-500 focus:bg-gray-500 bg-white border-gray-600 ml-2"-->
+                            <!--                                       aria-labelledby="option-2" aria-describedby="option-2">-->
+                            <!--                                <label for="option-2"-->
+                            <!--                                       class="block ml-2 font-medium text-gray-900">-->
+                            <!--                                    الدفع عن طريق زين كاش-->
+                            <!--                                </label>-->
+                            <!--                            </div>-->
 
                             <div v-for="error in validationErrors.payment_type" class="w-full mb-2">
-                                <h1 class="text-red-500 text-sm">اختر احدى طرق الدفع</h1>
+                                <h1 class="text-red-500 text-sm">اختر طريقة الدفع</h1>
                             </div>
 
 
